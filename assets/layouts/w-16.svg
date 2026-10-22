@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 370" preserveAspectRatio="xMidYMid meet">
+<line x1="70" y1="250" x2="450" y2="250" stroke="#2f394d" stroke-width="14" stroke-linecap="round"/><circle cx="260" cy="250" r="13" fill="#080b11" stroke="#39435a" stroke-width="3"/><line x1="240" y1="272" x2="280" y2="272" stroke="#39435a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="304.0" cy="240.9" r="15" fill="#ff5f3d" stroke="#080b11" stroke-width="3"/>
+<circle cx="331.3" cy="214.5" r="15" fill="#ffa62b" stroke="#080b11" stroke-width="3"/>
+<circle cx="358.7" cy="188.1" r="15" fill="#ffe066" stroke="#080b11" stroke-width="3"/>
+<circle cx="386.0" cy="161.7" r="15" fill="#9be564" stroke="#080b11" stroke-width="3"/>
+<circle cx="255.1" cy="205.3" r="15" fill="#38d6b0" stroke="#080b11" stroke-width="3"/>
+<circle cx="271.7" cy="171.2" r="15" fill="#4cc9f0" stroke="#080b11" stroke-width="3"/>
+<circle cx="288.4" cy="137.0" r="15" fill="#7aa2ff" stroke="#080b11" stroke-width="3"/>
+<circle cx="305.1" cy="102.9" r="15" fill="#b18bff" stroke="#080b11" stroke-width="3"/>
+<circle cx="249.3" cy="206.3" r="15" fill="#ffe066" stroke="#080b11" stroke-width="3"/>
+<circle cx="222.0" cy="179.9" r="15" fill="#9be564" stroke="#080b11" stroke-width="3"/>
+<circle cx="194.7" cy="153.5" r="15" fill="#38d6b0" stroke="#080b11" stroke-width="3"/>
+<circle cx="167.3" cy="127.1" r="15" fill="#4cc9f0" stroke="#080b11" stroke-width="3"/>
+<circle cx="221.8" cy="226.4" r="15" fill="#7aa2ff" stroke="#080b11" stroke-width="3"/>
+<circle cx="205.1" cy="192.2" r="15" fill="#b18bff" stroke="#080b11" stroke-width="3"/>
+<circle cx="188.5" cy="158.1" r="15" fill="#ff5f3d" stroke="#080b11" stroke-width="3"/>
+<circle cx="171.8" cy="123.9" r="15" fill="#ffa62b" stroke="#080b11" stroke-width="3"/>
+<text x="260" y="356" font-size="17" fill="#8a94a6" text-anchor="middle" font-family="-apple-system,PingFang SC,Noto Sans SC,sans-serif">W16 · 四排气缸，共用一根曲轴</text>
+</svg>

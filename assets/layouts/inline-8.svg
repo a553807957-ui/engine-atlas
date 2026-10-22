@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 370" preserveAspectRatio="xMidYMid meet">
+<line x1="70" y1="262" x2="450" y2="262" stroke="#2f394d" stroke-width="14" stroke-linecap="round"/><circle cx="260" cy="262" r="13" fill="#080b11" stroke="#39435a" stroke-width="3"/><line x1="240" y1="284" x2="280" y2="284" stroke="#39435a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="260.0" cy="224.0" r="21" fill="#ff5f3d" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="178.0" r="21" fill="#ffa62b" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="132.0" r="21" fill="#ffe066" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="86.0" r="21" fill="#9be564" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="40.0" r="21" fill="#38d6b0" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="-6.0" r="21" fill="#4cc9f0" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="-52.0" r="21" fill="#7aa2ff" stroke="#080b11" stroke-width="3"/>
+<circle cx="260.0" cy="-98.0" r="21" fill="#b18bff" stroke="#080b11" stroke-width="3"/>
+<text x="260" y="356" font-size="17" fill="#8a94a6" text-anchor="middle" font-family="-apple-system,PingFang SC,Noto Sans SC,sans-serif">直列 8 缸 · 一列，一根曲轴</text>
+</svg>

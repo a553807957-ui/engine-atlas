@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0c11">
+<title>3D 解剖台 · 多缸发动机图谱</title>
+<link rel="stylesheet" href="style.css?v=2700">
+<style>
+  html,body{height:100%;margin:0;overflow:hidden;background:#05070b}
+  .app{position:fixed;inset:0;display:flex;flex-direction:column}
+  .topbar{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:10px;
+    padding:calc(env(safe-area-inset-top,0px) + 10px) 14px 10px;
+    background:linear-gradient(180deg,rgba(5,7,11,.92),rgba(5,7,11,0));pointer-events:none}
+  .topbar a,.topbar select,.topbar button{pointer-events:auto}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#cfd6e2;text-decoration:none;font-size:13px;
+    background:rgba(22,28,40,.86);border:1px solid #232c3d;border-radius:999px;padding:7px 13px;backdrop-filter:blur(8px)}
+  .back:hover{color:#fff}
+  .title{font-size:13px;color:#8b95a7;margin-left:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stage{position:absolute;inset:0}
+  #viz3d{position:absolute;inset:0}
+  #viz3d canvas{display:block;width:100%!important;height:100%!important}
+  .hud{position:absolute;left:0;right:0;bottom:0;z-index:20;padding:10px 12px calc(env(safe-area-inset-bottom,0px) + 12px);
+    display:flex;flex-direction:column;gap:8px;
+    background:linear-gradient(0deg,rgba(5,7,11,.96),rgba(5,7,11,.72) 62%,rgba(5,7,11,0));pointer-events:none}
+  .hud>*{pointer-events:auto}
+  .nameblock{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+  .nm{min-width:0}
+  .nm h1{margin:0;font-size:17px;letter-spacing:-.2px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .nm .sub{font-size:11.5px;color:#7f8a9c;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pw{text-align:right;flex:none}
+  .pw b{font-family:var(--mono);font-size:18px;white-space:nowrap;color:#ffb02e;display:block;line-height:1.1}
+  .pw span{font-size:10.5px;color:#5f6a7d;font-family:var(--mono)}
+  .row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+  .chipsel{background:rgba(22,28,40,.9);border:1px solid #232c3d;color:#e8ecf3;border-radius:10px;
+    padding:8px 10px;font-size:12.5px;max-width:52vw;flex:1;min-width:0}
+  .tgl{display:inline-flex;align-items:center;gap:6px;background:rgba(22,28,40,.9);border:1px solid #232c3d;
+    border-radius:999px;padding:7px 11px;font-size:12px;color:#8b95a7;cursor:pointer;user-select:none;white-space:nowrap}
+  .tgl input{position:absolute;opacity:0;pointer-events:none}
+  .tgl i{width:26px;height:15px;border-radius:999px;background:#26304a;position:relative;flex:none;transition:.18s}
+  .tgl i:after{content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:#8b95a7;transition:.18s}
+  .tgl input:checked+i{background:linear-gradient(135deg,#ff4d2e,#ff8a3d)}
+  .tgl input:checked+i:after{left:13px;background:#fff}
+  .tgl input:checked~b{color:#e8ecf3}
+  .tgl b{font-weight:600}
+  .dials{display:grid;grid-template-columns:repeat(16,1fr);gap:3px;max-width:520px}
+  .dial{aspect-ratio:1;border-radius:50%;border:1px solid #232d40;display:grid;place-items:center;
+    font-family:var(--mono);font-size:8.5px;color:#4d5869;background:#0a0e15;transition:background .1s,color .1s,box-shadow .1s}
+  .dial.lit{color:#0a0c11;font-weight:800;background:linear-gradient(135deg,#ffb02e,#ff4d2e);box-shadow:0 0 10px rgba(255,120,40,.7)}
+  .seq{font-size:11px;color:#7f8a9c;line-height:1.7}
+  .seq .mono{color:#cfd6e2}
+  .rpmrow{display:flex;align-items:center;gap:10px}
+  .rpmrow input{flex:1;accent-color:#ff4d2e}
+  .rpmrow b{font-family:var(--mono);font-size:12px;color:#cfd6e2;min-width:76px;text-align:right}
+  @media (min-width:760px){
+    .hud{left:auto;right:16px;bottom:16px;width:360px;border-radius:18px;border:1px solid #232c3d;
+      background:rgba(12,16,23,.92);padding:14px;backdrop-filter:blur(10px);background-image:none}
+    .title{font-size:13.5px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="stage"><div id="viz3d"></div></div>
+
+  <div class="topbar">
+    <a class="back" href="index.html#viz">‹ 返回图谱</a>
+    <span class="title">3D 解剖台 · 拖动旋转 · 双指缩放</span>
+  </div>
+
+  <div class="hud">
+    <div class="nameblock">
+      <div class="nm">
+        <h1 id="nm">—</h1>
+        <div class="sub" id="sub">—</div>
+      </div>
+      <div class="pw"><b id="pw">—</b><span id="pwsub">—</span></div>
+    </div>
+
+    <div class="row">
+      <select class="chipsel" id="sel"></select>
+    </div>
+
+    <div class="row">
+      <label class="tgl"><input type="checkbox" id="run" checked><i></i><b>运行</b></label>
+      <label class="tgl"><input type="checkbox" id="cut"><i></i><b>剖切</b></label>
+      <label class="tgl"><input type="checkbox" id="exp"><i></i><b>拆解</b></label>
+      <label class="tgl"><input type="checkbox" id="orbit"><i></i><b>自转</b></label>
+      <button class="tgl" id="vfront" style="border-style:dashed">正视</button>
+    </div>
+
+    <div class="row">
+      <span style="font-size:11px;color:#7f8a9c;flex:none">点火</span>
+      <div class="dials" id="dials"></div>
+    </div>
+
+    <div class="seq" id="seq"></div>
+
+    <div class="rpmrow">
+      <input type="range" id="rpm" min="600" max="19000" step="100" value="7000">
+      <b id="rpmv">7000 rpm</b>
+    </div>
+  </div>
+</div>
+
+<script src="data.js?v=2700"></script>
+<script src="vendor/engine3d.bundle.js?v=2820"></script>
+<script src="lib/standalone.js?v=2710"></script>
+</body>
+</html>

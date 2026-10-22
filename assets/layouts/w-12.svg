@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 370" preserveAspectRatio="xMidYMid meet">
+<line x1="70" y1="250" x2="450" y2="250" stroke="#2f394d" stroke-width="14" stroke-linecap="round"/><circle cx="260" cy="250" r="13" fill="#080b11" stroke="#39435a" stroke-width="3"/><line x1="240" y1="272" x2="280" y2="272" stroke="#39435a" stroke-width="3" stroke-linecap="round"/>
+<circle cx="302.0" cy="237.2" r="16" fill="#ff5f3d" stroke="#080b11" stroke-width="3"/>
+<circle cx="329.3" cy="208.0" r="16" fill="#ffa62b" stroke="#080b11" stroke-width="3"/>
+<circle cx="356.6" cy="178.7" r="16" fill="#ffe066" stroke="#080b11" stroke-width="3"/>
+<circle cx="259.2" cy="206.1" r="16" fill="#38d6b0" stroke="#080b11" stroke-width="3"/>
+<circle cx="278.6" cy="171.1" r="16" fill="#4cc9f0" stroke="#080b11" stroke-width="3"/>
+<circle cx="298.0" cy="136.1" r="16" fill="#7aa2ff" stroke="#080b11" stroke-width="3"/>
+<circle cx="250.2" cy="207.2" r="16" fill="#ffe066" stroke="#080b11" stroke-width="3"/>
+<circle cx="222.9" cy="178.0" r="16" fill="#9be564" stroke="#080b11" stroke-width="3"/>
+<circle cx="195.6" cy="148.7" r="16" fill="#38d6b0" stroke="#080b11" stroke-width="3"/>
+<circle cx="222.3" cy="227.4" r="16" fill="#7aa2ff" stroke="#080b11" stroke-width="3"/>
+<circle cx="202.9" cy="192.4" r="16" fill="#b18bff" stroke="#080b11" stroke-width="3"/>
+<circle cx="183.6" cy="157.5" r="16" fill="#ff5f3d" stroke="#080b11" stroke-width="3"/>
+<text x="260" y="356" font-size="17" fill="#8a94a6" text-anchor="middle" font-family="-apple-system,PingFang SC,Noto Sans SC,sans-serif">W12 · 两列 15° VR6 以 72° 相交</text>
+</svg>

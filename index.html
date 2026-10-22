@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>多缸高性能发动机图谱 · 5–16 缸</title>
+<meta name="description" content="从直列五缸到 W16，覆盖 5 / 6 / 8 / 10 / 12 / 16 缸高性能发动机的科普图谱：缸体几何、平衡与点火、升功率、扭矩与红线转速对比。全部示意图为本站原创 SVG。">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><i class="dot"></i><span>多缸图谱<small>ENGINE ATLAS</small></span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#atlas" class="on">型号图谱</a>
+      <a href="viz.html#w16">3D 解剖台</a>
+      <a href="#layouts">缸型解剖</a>
+      <a href="#compare">数据对比</a>
+      <a href="#table">总表</a>
+      <a href="#tech">原理冷知识</a>
+      <a href="#timeline">简史</a>
+      <a href="#rights">版权声明</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="display:none">● 5 → 16 缸 · 自吸 / 增压 / 赛车</span>
+    <h1>气缸越多，<br><em>就真的越快吗？</em></h1>
+    
+    <p class="lead">从一台 88 匹的五缸柴油到 1600 匹的 W16 四涡轮，从 8000 转的直六到 19000 转的 F1 V10——这里把 5、6、8、10、12、16 缸里那些「值得一提」的高性能机型摆在一起，讲清楚它们为什么长成那个样子，以及「缸数」到底换来了什么。</p>
+    <div class="btnrow">
+      <a class="btn pri" href="viz.html#w16">进入 3D 解剖台 →</a>
+      <a class="btn ghost" href="#atlas">浏览 27 台机器</a>
+    </div>
+    <div class="statrow">
+      <div class="stat"><b>27</b><span>个代表机型</span></div>
+      <div class="stat"><b>6</b><span>种缸数族（5–16）</span></div>
+      <div class="stat"><b>19000</b><span>rpm · F1 V10 红线</span></div>
+      <div class="stat"><b>1600</b><span>N·m 峰值扭矩上限</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="atlas">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">01 / ENGINE ATLAS</span>
+        <h2>型号图谱</h2>
+        <p>点击任意卡片查看详细参数与设计解读。数据以工厂公布的曲轴输出为主；F1 历史机型为文献记载值，已经用「约」标注。</p>
+      </div>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="toolbar">
+      <div class="dim" id="count" style="font-size:13px"></div>
+      <input type="search" id="q" placeholder="搜索型号 / 厂商 / 车型…" aria-label="搜索">
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="detail" id="detail"></div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section id="viz">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">02 / LIVE 3D</span>
+        <h2>3D 解剖台</h2>
+        <p>21 台机型可实时旋转、剖切、拆解、调转速的 3D 模型。全部几何用代码现场生成，没有任何贴图或外部模型文件。</p>
+      </div>
+    </div>
+    <a class="viz-entry" href="viz.html#w16">
+      <div class="viz-entry-art">
+        <img src="assets/shots/v6-cut.jpg" alt="V6 发动机 3D 剖面" loading="lazy">
+        <span class="viz-play">▶ 进入 3D 解剖台</span>
+      </div>
+      <div class="viz-entry-meta">
+        <b>21 台机型 · 5 到 16 缸</b>
+        <span>拖动旋转 · 双指缩放 · 剖切看缸内 · 拆解看层次 · 按点火顺序闪烁</span>
+        <em>W16 / W12 / V16 / V12 / V10 / V8 / VR6 / 直列 5·6</em>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="layouts" style="background:linear-gradient(180deg,#0a0c11,#0d1118)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">03 / ANATOMY</span>
+        <h2>缸型解剖：为什么是「这个形状」</h2>
+        <p>下面每一张都是本站用 SVG 画的示意（不是照片、不是厂商图纸）：每个圆代表一个气缸，看的是排布方式，不看真实比例。</p>
+      </div>
+    </div>
+    <div class="cmp" id="layoutCards"></div>
+    <div class="bar-wrap">
+      <div class="tag" style="margin-bottom:10px;display:block">同排量下的「长度 / 宽度 / 高度」直觉（相对值，示意图）</div>
+      <div id="shapeBars"></div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">04 / NUMBERS</span>
+        <h2>数据对比：缸数换来了什么</h2>
+        <p>同一张坐标轴上比较升功率（PS/L）与红线转速。注意那些「异常点」——它们往往才是工程上真正有意思的地方。</p>
+      </div>
+    </div>
+    <div class="bar-wrap" id="chart1"><div class="tag" style="display:block;margin-bottom:12px">升功率 PS / L（按红线上色：越高转速越绿）</div><div id="chartBars"></div></div>
+    <div class="bar-wrap" id="chart2" style="margin-top:16px"><div class="tag" style="display:block;margin-bottom:12px">红线转速 rpm</div><div id="chartRpm"></div></div>
+    <div class="bar-wrap" style="margin-top:16px">
+      <div class="tag" style="display:block;margin-bottom:8px">读法提示</div>
+      <p class="dim" style="font-size:13px;margin:0">升功率高 ≠ 好开：F1 的 V10 升功率 300 PS/L，但它 2000 转时几乎没扭矩；W16 升功率只有 200 PS/L，却能 2000 转就给出 1600 N·m。气缸数量更多主要换来的是：<b style="color:var(--txt)">每缸排量变小 → 活塞更轻 → 可以转更高 → 单位排量的功率和音量一起变大</b>，代价是摩擦、重量、成本、排放。</p>
+    </div>
+  </div>
+</section>
+
+<section id="table" style="background:linear-gradient(180deg,#0d1118,#0a0c11)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">05 / SPEC SHEET</span>
+        <h2>总表（点表头排序）</h2>
+        <p>单位：功率 PS，扭矩 N·m，排量 cc，重量 kg。<span class="dim">—</span> 表示厂方未公开或不同版本差异过大。</p>
+      </div>
+    </div>
+    <div class="dim" style="font-size:12px;margin:-6px 0 10px">↔ 表格可左右滑动</div>
+    <div class="tablewrap">
+      <table id="specTable">
+        <thead><tr>
+          <th data-k="name">型号</th><th data-k="cyl">缸数</th><th data-k="layout">结构</th>
+          <th data-k="dispNum">排量</th><th data-k="power">功率</th><th data-k="torque">扭矩</th>
+          <th data-k="rpmLimit">红线</th><th data-k="powerDensity">升功率</th><th data-k="weight">重量</th><th data-k="asp">进气</th><th data-k="years">年份</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">06 / WHY IT WORKS</span>
+        <h2>原理冷知识</h2>
+        <p>这些结论决定了工程师只能在有限的几种「缸数」里做选择，也解释了为什么奇数缸这么少见、为什么 V12 那么顺。</p>
+      </div>
+    </div>
+    <div class="techgrid" id="techGrid"></div>
+  </div>
+</section>
+
+
+<section id="timeline" style="background:linear-gradient(180deg,#0a0c11,#0c1017)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">07 / TIMELINE</span>
+        <h2>一百年的缸数简史</h2>
+        <p>多缸机不是越来越快这么简单，它是「规则、材料、成本」三股力量的博弈结果。下面按年代挑了几个转折点。</p>
+      </div>
+    </div>
+    <div class="tl" id="timelineBox"></div>
+  </div>
+</section>
+
+<section id="rights" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="tag">08 / RIGHTS</span>
+        <h2>版权与数据来源说明</h2>
+        <p>这个站点是「自己画的 + 自己写的参数表」，没有搬用任何厂商图片、宣传文案或受版权保护的图纸。</p>
+      </div>
+    </div>
+    <div class="credit" id="rightsBox"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>多缸发动机图谱</b><br>
+        一个纯前端的发动机科普小站。<br>
+        无追踪、无第三方脚本、无字体外链 — 断网也能看。
+      </div>
+      <div>
+        <b>数据口径</b><br>
+        功率为曲轴输出（厂商 DIN 标准），PS≈HP≈0.9863 bhp；<br>
+        F1 历史机型为赛事/文献值，取区间中值以「约」表示。
+      </div>
+      <div>
+        <b>图片</b><br>
+        全部示意图由本站以 SVG 程序化生成（<span class="mono">/assets/layouts</span>），无照片、无厂商 logo。
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:11.5px">本页参数由公开规格资料整理，仅供参考，不作为工程或采购依据。厂商名称与型号仅为说明性引用（nominative use）。</p>
+  </div>
+</footer>
+
+<script src="data.js?v=9"></script>
+<script src="app.js?v=3000"></script>
+<script src="vendor/engine3d.bundle.js?v=2820"></script>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.navlinks a')).filter(function(a){ return a.getAttribute('href').charAt(0) === '#'; });
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  var ticking=false;
+  function sync(){
+    var y=window.scrollY+window.innerHeight*0.32, cur=secs[0];
+    for(var i=0;i<secs.length;i++){ if(secs[i].offsetTop<=y) cur=secs[i]; }
+    for(var j=0;j<links.length;j++){ links[j].classList.toggle('on', links[j].getAttribute('href')==='#'+cur.id); }
+  }
+  window.addEventListener('scroll',function(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ sync(); ticking=false; }); },{passive:true});
+  sync();
+})();
+</script>
+</body>
+</html>
